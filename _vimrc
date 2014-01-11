@@ -1,6 +1,6 @@
-"runtime macros/matchit.vim              " подключаем matchit.vim
 language English_United States	      	" английский язык
-"source $VIMRUNTIME/vimrc_example.vim
+runtime macros/matchit.vim              " подключаем matchit.vim
+source $VIMRUNTIME/vimrc_example.vim
 "source $VIMRUNTIME/mswin.vim
 
 "------------------------------------------
@@ -25,11 +25,18 @@ Bundle 'mattn/emmet-vim.git'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'mileszs/ack.vim'
+Bundle 'tsaleh/vim-matchit'
 Bundle 'tpope/vim-abolish'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'tpope/vim-fugitive'
 
+Bundle 'exUtility'
+Bundle 'project.tar.gz'
+Bundle 'shemerey/vim-indexer'
+ 
+
 filetype plugin indent on     " required!
+filetype on                  " required!
 
 " Brief help
 " :BundleList          - list configured bundles
