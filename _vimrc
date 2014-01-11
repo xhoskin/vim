@@ -1,7 +1,43 @@
-runtime macros/matchit.vim              " подключаем matchit.vim
-language English_United States		" английский язык
+"runtime macros/matchit.vim              " подключаем matchit.vim
+language English_United States	      	" английский язык
 "source $VIMRUNTIME/vimrc_example.vim
 "source $VIMRUNTIME/mswin.vim
+
+"------------------------------------------
+" ` Плагины
+"------------------------------------------
+set nocompatible              " be iMproved
+filetype off                  " required!
+
+set rtp+=$VIM\vimfiles\bundle\vundle
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+Bundle 'groenewege/vim-less.git'
+Bundle 'skammer/vim-css-color.git'
+Bundle 'groenewege/vim-less.git'
+Bundle 'skammer/vim-css-color.git'
+Bundle 'hail2u/vim-css3-syntax.git'
+Bundle 'scrooloose/nerdcommenter.git'
+Bundle 'mattn/emmet-vim.git'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'mileszs/ack.vim'
+Bundle 'tpope/vim-abolish'
+Bundle 'nelstrom/vim-qargs'
+Bundle 'tpope/vim-fugitive'
+
+filetype plugin indent on     " required!
+
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install (update) bundles
+" :BundleSearch(!) foo - search (or refresh cache first) for foo
+" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
+
+
 
 "------------------------------------------
 " `Горячие клавиши
@@ -126,12 +162,10 @@ set langmap=й\\;,ц\\,у.,кp,еy,нf,гg,шc,щr,зl,х/,ъ@,фa,ыo,вe,аu,пi,рd,оd,лt,дn,жs
 
 ino <C-C> <Esc>
 
+
 "------------------------------------------
 " ` Скрипты
 "------------------------------------------
-
-"включаем pathogen
-call pathogen#infect()
 
 "открывать файлы кода в нужном формате
 autocmd BufRead,BufNewFile *.cshtml set filetype=html
@@ -176,7 +210,7 @@ augroup END
 
 " Insert-only <CAPS-LOCK> on <C-^>
 set imsearch=-1
-set keymap=insert-only_capslock
+"set keymap=insert-only_capslock
 set iminsert=0
 " black cursor - caps off
 :highlight Cursor guifg=NONE guibg=Red
