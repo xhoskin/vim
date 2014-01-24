@@ -30,9 +30,9 @@ Bundle 'tpope/vim-abolish'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'tpope/vim-fugitive'
 
-Bundle 'exUtility'
-Bundle 'project.tar.gz'
-Bundle 'shemerey/vim-indexer'
+"Bundle 'exUtility'
+"Bundle 'project.tar.gz'
+"Bundle 'shemerey/vim-indexer'
  
 
 filetype plugin indent on     " required!
@@ -262,7 +262,7 @@ endif
 :set suffixesadd+=.php,.less,.css
 
 " используем unix-grep вместо windows-findstr
-set grepprg=$VIMRUNTIME\grep\grep.exe\ -nir\ $*
+set grepprg=$VIMRUNTIME\grep\grep.exe\ -nir\ --include=$*\ .
 set grepformat=%f:%l:%m
 
 
