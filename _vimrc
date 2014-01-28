@@ -23,6 +23,7 @@ Bundle 'hail2u/vim-css3-syntax.git'
 Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'mattn/emmet-vim.git'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-surround'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'mileszs/ack.vim'
 Bundle 'tsaleh/vim-matchit'
@@ -30,9 +31,9 @@ Bundle 'tpope/vim-abolish'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'tpope/vim-fugitive'
 
+Bundle 'project.tar.gz'
+Bundle 'shemerey/vim-indexer'
 "Bundle 'exUtility'
-"Bundle 'project.tar.gz'
-"Bundle 'shemerey/vim-indexer'
  
 
 filetype plugin indent on     " required!
