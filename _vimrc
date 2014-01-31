@@ -30,13 +30,14 @@ Bundle 'tpope/vim-abolish'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'tpope/vim-fugitive'
 
-Bundle 'exUtility'
+"Bundle 'exUtility'
 Bundle 'project.tar.gz'
-Bundle 'shemerey/vim-indexer'
+"Bundle 'shemerey/vim-indexer'
  
 
-filetype plugin indent on     " required!
+filetype plugin indent on    " required!
 filetype on                  " required!
+
 
 " Brief help
 " :BundleList          - list configured bundles
@@ -157,6 +158,11 @@ set vb t_vb=aaa
 "не создавать swap-файл
 set noswapfile
 
+"Project plugin options
+let g:proj_flags="imsTg"
+set wildignore=*~
+
+
 "------------------------------------------
 " ` Исправления проблем с раскадкой клавиатур
 "------------------------------------------
@@ -180,29 +186,30 @@ autocmd BufRead,BufNewFile *.twig set filetype=html
 autocmd BufRead,BufNewFile *.less set filetype=css
 autocmd BufRead,BufNewFile *.sass set filetype=css
 
-function MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  let eq = ''
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      let cmd = '""' . $VIMRUNTIME . '\diff"'
-      let eq = '"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-endfunction
+" TODO: перенести функцию в плагин
+" function MyDiff()
+  " let opt = '-a --binary '
+  " if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  " if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  " let arg1 = v:fname_in
+  " if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  " let arg2 = v:fname_new
+  " if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  " let arg3 = v:fname_out
+  " if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  " let eq = ''
+  " if $VIMRUNTIME =~ ' '
+    " if &sh =~ '\<cmd'
+      " let cmd = '""' . $VIMRUNTIME . '\diff"'
+      " let eq = '"'
+    " else
+      " let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    " endif
+  " else
+    " let cmd = $VIMRUNTIME . '\diff'
+  " endif
+  " silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+" endfunction
 
 " JSON
 augroup json_autocmd 
@@ -262,7 +269,7 @@ endif
 :set suffixesadd+=.php,.less,.css
 
 " используем unix-grep вместо windows-findstr
-set grepprg=$VIMRUNTIME\grep\grep.exe\ -nir\ $*
+set grepprg=grep.exe\ -ni\ $*
 set grepformat=%f:%l:%m
 
 
