@@ -23,6 +23,7 @@ Bundle 'hail2u/vim-css3-syntax.git'
 Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'mattn/emmet-vim.git'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-surround'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'mileszs/ack.vim'
 Bundle 'tsaleh/vim-matchit'
@@ -30,9 +31,15 @@ Bundle 'tpope/vim-abolish'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'tpope/vim-fugitive'
 
+<<<<<<< HEAD
 "Bundle 'exUtility'
 Bundle 'project.tar.gz'
 "Bundle 'shemerey/vim-indexer'
+=======
+Bundle 'project.tar.gz'
+Bundle 'shemerey/vim-indexer'
+"Bundle 'exUtility'
+>>>>>>> cce78566f0197292746f069534fd67de13b74c19
  
 
 filetype plugin indent on    " required!
@@ -269,7 +276,11 @@ endif
 :set suffixesadd+=.php,.less,.css
 
 " используем unix-grep вместо windows-findstr
+<<<<<<< HEAD
 set grepprg=grep.exe\ -ni\ $*
+=======
+set grepprg=$VIMRUNTIME\grep\grep.exe\ -nir\ --include=$*\ .
+>>>>>>> cce78566f0197292746f069534fd67de13b74c19
 set grepformat=%f:%l:%m
 
 
