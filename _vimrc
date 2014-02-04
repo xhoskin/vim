@@ -30,6 +30,7 @@ Bundle 'tsaleh/vim-matchit'
 Bundle 'tpope/vim-abolish'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'tpope/vim-fugitive'
+Bundle 'miripiruni/CSScomb-for-Vim.git'
 
 "Bundle 'exUtility'
 Bundle 'project.tar.gz'
