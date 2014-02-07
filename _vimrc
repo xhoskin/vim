@@ -15,15 +15,18 @@ call vundle#rc()
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
+"Syntax plugins
 Bundle 'evidens/vim-twig'
 Bundle 'groenewege/vim-less.git'
 Bundle 'hail2u/vim-css3-syntax.git'
+Bundle 'skammer/vim-css-color.git'
+
+"Functional plugins
 Bundle 'mattn/emmet-vim.git'
 Bundle 'miripiruni/CSScomb-for-Vim.git'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'scrooloose/nerdcommenter.git'
-Bundle 'skammer/vim-css-color.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
