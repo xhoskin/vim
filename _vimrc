@@ -109,8 +109,6 @@ map <F8> :set wrap!<cr>
 " F9 - CSScomb
 nmap <F9> :CSScomb<cr>
 
-" F12 - обозреватель проектов 
-map <F12> :Project<cr>
 " Shift-F12 - обозреватель файлов
 map <S-F12> :Vex z: <cr><C-W>20\|
 
@@ -164,12 +162,12 @@ set nohlsearch
 "не учитывать регистр символов при поиске
 set ignorecase
 "не издавать противный звуковой сигнал
-set vb t_vb=aaa
+set vb t_vb=
 "не создавать swap-файл
 set noswapfile
 
 "Project plugin options
-let g:proj_flags="imsTg"
+let g:proj_flags="cgimt"
 set wildignore=*~
 
 
