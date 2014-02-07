@@ -15,6 +15,7 @@ call vundle#rc()
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
+Bundle 'evidens/vim-twig'
 Bundle 'groenewege/vim-less.git'
 Bundle 'hail2u/vim-css3-syntax.git'
 Bundle 'mattn/emmet-vim.git'
@@ -96,15 +97,19 @@ vmap <C-F2> <esc>:wall<cr>i
 imap <C-F2> <esc>:wall<cr>i
 
 " F7 - поиск vimgrep по текущей папке
-nmap <F7> :vimgrep // *<Left><Left><Left>
+"nmap <F7> :vimgrep // *<Left><Left><Left>
+nmap <F7> :grep -r --exclude=*~ --exclude-dir=finish  "" cart catalog common templates<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
  
 " F8 - вкл/выкл перенос длинных строк
 map <F8> :set wrap!<cr>
 
-" F12 - обозреватель файлов
-map <F12> :Vex z: <cr><C-W>20\|
-" Shift-F12 - открыть обозреватель файлов в папке \code
-map <S-F12> :NERDTree d:\code\<cr><C-W>20\|
+" F9 - CSScomb
+nmap <F9> :CSScomb<cr>
+
+" F12 - обозреватель проектов 
+map <F12> :Project<cr>
+" Shift-F12 - обозреватель файлов
+map <S-F12> :Vex z: <cr><C-W>20\|
 
 " отключаем сочетание K, случайно срабатывающее на caps-lock
 nmap K <Nop>
