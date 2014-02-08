@@ -277,7 +277,7 @@ endif
 :set suffixesadd+=.php,.less,.css
 
 " используем unix-grep вместо windows-findstr
-set grepprg=grep.exe\ -ni\ $*
+set grepprg=\"$VIMRUNTIME\grep\grep.exe\"\ -ni\ $*
 set grepformat=%f:%l:%m
 
 
@@ -291,8 +291,7 @@ nmap dar ?[{<Char-0x7c><Char-0x7c>]<CR>wd/;\s?/e<CR>
 nmap cir ?[{<Char-0x7c><Char-0x7c>]<CR>wc/;/e<CR>
 "TO-DO найти как по науке создовать свои text-objects
 
-"TO-DO install https://github.com/nelstrom/vim-visual-star-search
-"TO-DO install https://github.com/mileszs/ack.vim 
-"TO-DO install https://github.com/tpope/vim-abolish
-"TO-DO install https://github.com/nelstrom/vim-qargs
-"TO-DO install https://github.com/tpope/vim-fugitive
+"TO-DO попробовать ide.vim
+"TO-DO Project: открывать в vs
+"TO-DO что такое git-grep
+"TO-DO ack
