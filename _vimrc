@@ -20,6 +20,7 @@ Bundle 'evidens/vim-twig'
 Bundle 'groenewege/vim-less.git'
 Bundle 'hail2u/vim-css3-syntax.git'
 Bundle 'skammer/vim-css-color.git'
+Bundle 'vim-scripts/django.vim'
 
 "Functional plugins
 Bundle 'mattn/emmet-vim.git'
