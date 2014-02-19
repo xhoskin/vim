@@ -34,6 +34,13 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/CSS-one-line--multi-line-folding'
 
+"Snipmate
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+"Bundle 'bonsaiben/bootstrap-snippets'  "bootstrap html-markup snippets!
+"Bundle 'honza/vim-snippets'
+
 "Bundle 'mileszs/ack.vim'
 "Bundle 'tpope/vim-abolish'
 "Bundle 'exUtility'
