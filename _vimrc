@@ -172,6 +172,8 @@ set ignorecase
 set vb t_vb=
 "не создавать swap-файл
 set noswapfile
+"подсвечивать текущую строку
+set cursorline
 
 "Project plugin options
 let g:proj_flags="cgimt"
