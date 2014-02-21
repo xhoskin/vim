@@ -38,8 +38,9 @@ Bundle 'vim-scripts/CSS-one-line--multi-line-folding'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
-"Bundle 'bonsaiben/bootstrap-snippets'  "bootstrap html-markup snippets!
-"Bundle 'honza/vim-snippets'
+"bootstrap html-markup snippets!
+Bundle 'bonsaiben/bootstrap-snippets'  
+Bundle 'honza/vim-snippets'
 
 "Bundle 'mileszs/ack.vim'
 "Bundle 'tpope/vim-abolish'
@@ -116,6 +117,9 @@ map <F8> :set wrap!<cr>
 
 " F9 - CSScomb
 nmap <F9> :CSScomb<cr>
+
+" F11 - открыть во вкладке папку со сниппетами
+nmap <F11> :tabe C:\Program\ Files\vim\vimfiles\snippets\<cr>
 
 " Shift-F12 - обозреватель файлов
 map <S-F12> :Vex z: <cr><C-W>20\|
