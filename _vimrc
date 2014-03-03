@@ -21,6 +21,7 @@ Bundle 'groenewege/vim-less.git'
 Bundle 'hail2u/vim-css3-syntax.git'
 Bundle 'skammer/vim-css-color.git'
 Bundle 'vim-scripts/django.vim'
+Bundle 'aaronj1335/underscore-templates.vim'
 
 "Functional plugins
 Bundle 'mattn/emmet-vim.git'
@@ -288,6 +289,9 @@ else
   nmap ,cs :let @*=expand("%")<CR>
   nmap ,cl :let @*=expand("%:p")<CR>
 endif
+
+"включить синтаксис underscore
+nmap ,su :set ft=underscore_template<cr>
 
 " расширения, которые будут добавлятсья при переходе по gf
 :set suffixesadd+=.php,.less,.css
