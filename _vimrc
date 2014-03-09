@@ -21,6 +21,7 @@ Bundle 'groenewege/vim-less.git'
 Bundle 'hail2u/vim-css3-syntax.git'
 Bundle 'skammer/vim-css-color.git'
 Bundle 'vim-scripts/django.vim'
+Bundle 'aaronj1335/underscore-templates.vim'
 
 " функциональные плагины
 Bundle 'mattn/emmet-vim.git'
@@ -177,6 +178,8 @@ set ignorecase
 set vb t_vb=
 "не создавать swap-файл
 set noswapfile
+"подсвечивать текущую строку
+set cursorline
 
 "Project plugin options
 let g:proj_flags="cgimt"
@@ -284,6 +287,9 @@ else
   nmap ,cs :let @*=expand("%")<CR>
   nmap ,cl :let @*=expand("%:p")<CR>
 endif
+
+"включить синтаксис underscore
+nmap ,su :set ft=underscore_template<cr>
 
 " расширения, которые будут добавлятсья при переходе по gf
 :set suffixesadd+=.php,.less,.css
