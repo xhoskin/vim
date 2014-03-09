@@ -15,14 +15,14 @@ call vundle#rc()
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
-"Syntax plugins
+" плагины синтаксиса
 Bundle 'evidens/vim-twig'
 Bundle 'groenewege/vim-less.git'
 Bundle 'hail2u/vim-css3-syntax.git'
 Bundle 'skammer/vim-css-color.git'
 Bundle 'vim-scripts/django.vim'
 
-"Functional plugins
+" функциональные плагины
 Bundle 'mattn/emmet-vim.git'
 Bundle 'miripiruni/CSScomb-for-Vim.git'
 Bundle 'nelstrom/vim-qargs'
@@ -33,6 +33,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/CSS-one-line--multi-line-folding'
+Bundle 'junegunn/vim-easy-align'
 
 "Snipmate
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -42,24 +43,17 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'bonsaiben/bootstrap-snippets'  
 Bundle 'honza/vim-snippets'
 
+" навигация по файлам
+Bundle 'project.tar.gz'
+Bundle 'shemerey/vim-indexer'
+ 
+" попробую позже
 "Bundle 'mileszs/ack.vim'
 "Bundle 'tpope/vim-abolish'
 "Bundle 'exUtility'
 
-Bundle 'project.tar.gz'
-"Bundle 'shemerey/vim-indexer'
- 
-
 filetype plugin indent on    " required!
 filetype on                  " required!
-
-
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install (update) bundles
-" :BundleSearch(!) foo - search (or refresh cache first) for foo
-" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
-
 
 
 "------------------------------------------
@@ -299,6 +293,7 @@ set grepprg=\"$VIMRUNTIME\grep\grep.exe\"\ -ni\ $*
 set grepformat=%f:%l:%m
 
 
+
 "------------------------------------------
 " ` CSS text-objects
 "------------------------------------------
@@ -313,3 +308,5 @@ nmap cir ?[{<Char-0x7c><Char-0x7c>]<CR>wc/;/e<CR>
 "TO-DO Project: открывать в vs
 "TO-DO что такое git-grep
 "TO-DO ack
+
+"TO-DO попробовать https://github.com/mozilla/doctorjs
