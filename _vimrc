@@ -291,7 +291,7 @@ else
 endif
 
 "включить синтаксис underscore
-nmap ,su :set ft=underscore_template<cr>
+nmap ,su :set ft=html<cr>:set syntax=underscore_template<cr>
 
 " расширения, которые будут добавлятсья при переходе по gf
 :set suffixesadd+=.php,.less,.css
