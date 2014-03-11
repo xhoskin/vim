@@ -46,7 +46,7 @@ Bundle 'honza/vim-snippets'
 
 " навигация по файлам
 Bundle 'project.tar.gz'
-Bundle 'shemerey/vim-indexer'
+"Bundle 'shemerey/vim-indexer'
  
 " попробую позже
 "Bundle 'mileszs/ack.vim'
