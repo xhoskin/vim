@@ -1,5 +1,4 @@
 language English_United States	      	" английский язык
-runtime macros/matchit.vim              " подключаем matchit.vim
 source $VIMRUNTIME/vimrc_example.vim
 "source $VIMRUNTIME/mswin.vim
 
@@ -32,7 +31,7 @@ Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'tsaleh/vim-matchit'
+Bundle 'tmhedberg/matchit'
 Bundle 'vim-scripts/CSS-one-line--multi-line-folding'
 Bundle 'junegunn/vim-easy-align'
 
