@@ -291,6 +291,9 @@ endif
 "включить синтаксис underscore
 nmap ,su :set ft=underscore_template<cr>
 
+"пометить конец тега
+nmap ,e vato<C-c>yi"vat<C-c>A <!-- / <C-r>" --><C-c>
+
 " расширени€, которые будут добавл€тсь€ при переходе по gf
 :set suffixesadd+=.php,.less,.css
 
@@ -298,7 +301,14 @@ nmap ,su :set ft=underscore_template<cr>
 set grepprg=\"$VIMRUNTIME\grep\grep.exe\"\ -ni\ $*
 set grepformat=%f:%l:%m
 
+" Start interactive EasyAlign in visual mode
+vmap <Enter> <Plug>(EasyAlign)
 
+" Start interactive EasyAlign with a Vim movement
+nmap <Leader>a <Plug>(EasyAlign)
+
+" Repeat alignment in visual mode with . key
+vmap . <Plug>(EasyAlignRepeat)
 
 "------------------------------------------
 " ` CSS text-objects
