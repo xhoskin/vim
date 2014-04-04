@@ -104,7 +104,7 @@ imap <C-F2> <esc>:wall<cr>i
 
 " F7 - поиск vimgrep по текущей папке
 "nmap <F7> :vimgrep // *<Left><Left><Left>
-nmap <F7> :grep -r --exclude=*~ --exclude-dir=finish  "" cart catalog common templates<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+nmap <F7> :grep -r --exclude=*~ --exclude-dir=finish  "" templates<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
  
 " F8 - вкл/выкл перенос длинных строк
 map <F8> :set wrap!<cr>
@@ -178,7 +178,7 @@ set vb t_vb=
 "не создавать swap-файл
 set noswapfile
 "подсвечивать текущую строку
-set cursorline
+"set cursorline
 
 "Project plugin options
 let g:proj_flags="cgimt"
@@ -287,6 +287,9 @@ else
   nmap ,cl :let @*=expand("%:p")<CR>
 endif
 
+" Start interactive EasyAlign in visual mode
+vmap <Enter> <Plug>(EasyAlign)
+
 "включить синтаксис underscore
 nmap ,su :set ft=html<cr>:set syntax=underscore_template<cr>
 
@@ -308,6 +311,8 @@ nmap dar ?[{<Char-0x7c><Char-0x7c>]<CR>wd/;\s?/e<CR>
 "удалить свойство БЕЗ пробела после него
 nmap cir ?[{<Char-0x7c><Char-0x7c>]<CR>wc/;/e<CR>
 "TO-DO найти как по науке создовать свои text-objects
+
+"TO-DO !!! написать скрипт автооглавления css
 
 "TO-DO попробовать ide.vim
 "TO-DO Project: открывать в vs
