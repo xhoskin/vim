@@ -130,6 +130,9 @@ vmap ,* *<S-Tab>nzz
 " поиск текста из буфера обмена
 nmap ,* /<C-r>*<cr>zz
 
+" grep-поиск в текущей паке
+nmap ,g :grep -r "" *<Left><Left><Left>
+
 "------------------------------------------
 " ` Запуск внешних программ и компиляторов
 "------------------------------------------
@@ -207,31 +210,6 @@ autocmd BufRead,BufNewFile *.cshtml set filetype=html
 autocmd BufRead,BufNewFile *.twig set filetype=html
 autocmd BufRead,BufNewFile *.less set filetype=css
 autocmd BufRead,BufNewFile *.sass set filetype=css
-
-" TODO: перенести функцию в плагин
-" function MyDiff()
-  " let opt = '-a --binary '
-  " if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  " if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  " let arg1 = v:fname_in
-  " if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  " let arg2 = v:fname_new
-  " if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  " let arg3 = v:fname_out
-  " if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  " let eq = ''
-  " if $VIMRUNTIME =~ ' '
-    " if &sh =~ '\<cmd'
-      " let cmd = '""' . $VIMRUNTIME . '\diff"'
-      " let eq = '"'
-    " else
-      " let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    " endif
-  " else
-    " let cmd = $VIMRUNTIME . '\diff'
-  " endif
-  " silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-" endfunction
 
 " JSON
 augroup json_autocmd 
@@ -322,11 +300,16 @@ nmap dar ?[{<Char-0x7c><Char-0x7c>]<CR>wd/;\s?/e<CR>
 nmap cir ?[{<Char-0x7c><Char-0x7c>]<CR>wc/;/e<CR>
 "TO-DO найти как по науке создовать свои text-objects
 
-"TO-DO !!! написать скрипт автооглавления css
+"------------------------------------------
+" ` TO-DO
+"------------------------------------------
 
+"TO-DO emmet-vim css-свойства в строчку
+"TO-DO написать скрипт автооглавления css
+
+"плагины
 "TO-DO попробовать ide.vim
 "TO-DO Project: открывать в vs
 "TO-DO что такое git-grep
 "TO-DO ack
-
 "TO-DO попробовать https://github.com/mozilla/doctorjs
