@@ -115,7 +115,7 @@ nmap <F9> :CSScomb<cr>
 " F11 - открыть во вкладке папку со сниппетами
 nmap <F11> :tabe C:\Program\ Files\vim\vimfiles\snippets\<cr>
 
-" Shift-F12 - обозреватель файлов
+" Shift-F12 - обозреватель файлов:set directory=$HOME/.vim/swapfiles//
 map <S-F12> :Vex z: <cr><C-W>20\|
 
 " отключаем сочетание K, случайно срабатывающее на caps-lock
@@ -182,6 +182,8 @@ set vb t_vb=
 set noswapfile
 "подсвечивать текущую строку
 "set cursorline
+
+set backupdir=$HOME\.vim\\
 
 "Project plugin options
 let g:proj_flags="cgimt"
