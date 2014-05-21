@@ -183,6 +183,7 @@ set noswapfile
 "подсвечивать текущую строку
 "set cursorline
 
+"сохранять бэкапы в домашнюю папку
 set backupdir=$HOME\.vim\\
 
 "Project plugin options
