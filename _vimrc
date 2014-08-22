@@ -179,7 +179,7 @@ set vb t_vb=
 "не создавать swap-файл
 set noswapfile
 "подсвечивать текущую строку
-set cursorline
+"set cursorline
 
 "Project plugin options
 let g:proj_flags="cgimt"
@@ -294,6 +294,9 @@ nmap ,su :set ft=underscore_template<cr>
 "пометить конец тега
 nmap ,e vato<C-c>yi"vat<C-c>A <!-- / <C-r>" --><C-c>
 
+"создать содержание для less-файла
+nmap ,mi :g/\v(\=\=\\|\*\*)/y A"apV}:s/  //ggv:s/== //ggv:s/** /  /g
+
 " расширения, которые будут добавлятсья при переходе по gf
 :set suffixesadd+=.php,.less,.css
 
@@ -309,6 +312,8 @@ nmap <Leader>a <Plug>(EasyAlign)
 
 " Repeat alignment in visual mode with . key
 vmap . <Plug>(EasyAlignRepeat)
+
+
 
 "------------------------------------------
 " ` CSS text-objects
@@ -326,3 +331,7 @@ nmap cir ?[{<Char-0x7c><Char-0x7c>]<CR>wc/;/e<CR>
 "TO-DO ack
 
 "TO-DO попробовать https://github.com/mozilla/doctorjs
+"
+
+
+nmap ,mi :g/\v(\=\=|\*\*)/y A"ap
