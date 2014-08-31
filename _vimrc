@@ -1,5 +1,4 @@
 language English_United States	      	" английский язык
-runtime macros/matchit.vim              " подключаем matchit.vim
 source $VIMRUNTIME/vimrc_example.vim
 "source $VIMRUNTIME/mswin.vim
 
@@ -32,7 +31,7 @@ Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'tsaleh/vim-matchit'
+Bundle 'tmhedberg/matchit'
 Bundle 'vim-scripts/CSS-one-line--multi-line-folding'
 Bundle 'junegunn/vim-easy-align'
 
@@ -46,7 +45,7 @@ Bundle 'honza/vim-snippets'
 
 " навигация по файлам
 Bundle 'project.tar.gz'
-Bundle 'shemerey/vim-indexer'
+"Bundle 'shemerey/vim-indexer'
  
 " попробую позже
 "Bundle 'mileszs/ack.vim'
@@ -107,7 +106,7 @@ imap <C-F2> <esc>:wall<cr>i
 
 " F7 - поиск vimgrep по текущей папке
 "nmap <F7> :vimgrep // *<Left><Left><Left>
-nmap <F7> :grep -r --exclude=*~ --exclude-dir=finish  "" cart catalog common templates<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+nmap <F7> :grep -r --exclude=*~ --exclude-dir=finish  "" templates<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
  
 " F8 - вкл/выкл перенос длинных строк
 map <F8> :set wrap!<cr>
@@ -118,7 +117,7 @@ nmap <F9> :CSScomb<cr>
 " F11 - открыть во вкладке папку со сниппетами
 nmap <F11> :tabe C:\Program\ Files\vim\vimfiles\snippets\<cr>
 
-" Shift-F12 - обозреватель файлов
+" Shift-F12 - обозреватель файлов:set directory=$HOME/.vim/swapfiles//
 map <S-F12> :Vex z: <cr><C-W>20\|
 
 " отключаем сочетание K, случайно срабатывающее на caps-lock
@@ -133,10 +132,10 @@ vmap ,* *<S-Tab>nzz
 " поиск текста из буфера обмена
 nmap ,* /<C-r>*<cr>zz
 
+" ,g - grep-поиск в текущей паке
+nmap ,g :grep -r "" *<Left><Left><Left>
 
 
-"
-" == Запуск внешних программ и компиляторов
 "------------------------------------------
 
 "pascal
@@ -187,6 +186,9 @@ set noswapfile
 "подсвечивать текущую строку
 "set cursorline
 
+"сохранять бэкапы в домашнюю папку
+set backupdir=$HOME\.vim\\
+
 "Project plugin options
 let g:proj_flags="cgimt"
 set wildignore=*~
@@ -216,31 +218,6 @@ autocmd BufRead,BufNewFile *.cshtml set filetype=html
 autocmd BufRead,BufNewFile *.twig set filetype=html
 autocmd BufRead,BufNewFile *.less set filetype=css
 autocmd BufRead,BufNewFile *.sass set filetype=css
-
-" TODO: перенести функцию в плагин
-" function MyDiff()
-  " let opt = '-a --binary '
-  " if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  " if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  " let arg1 = v:fname_in
-  " if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  " let arg2 = v:fname_new
-  " if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  " let arg3 = v:fname_out
-  " if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  " let eq = ''
-  " if $VIMRUNTIME =~ ' '
-    " if &sh =~ '\<cmd'
-      " let cmd = '""' . $VIMRUNTIME . '\diff"'
-      " let eq = '"'
-    " else
-      " let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    " endif
-  " else
-    " let cmd = $VIMRUNTIME . '\diff'
-  " endif
-  " silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-" endfunction
 
 " JSON
 augroup json_autocmd 
@@ -296,8 +273,11 @@ else
   nmap ,cl :let @*=expand("%:p")<CR>
 endif
 
+" Start interactive EasyAlign in visual mode
+vmap <Enter> <Plug>(EasyAlign)
+
 "включить синтаксис underscore
-nmap ,su :set ft=underscore_template<cr>
+nmap ,su :set ft=html<cr>:set syntax=underscore_template<cr>
 
 "пометить конец тега
 nmap ,e vato<C-c>yi"vat<C-c>A <!-- / <C-r>" --><C-c>
@@ -333,9 +313,18 @@ nmap dar ?[{<Char-0x7c><Char-0x7c>]<CR>wd/;\s?/e<CR>
 nmap cir ?[{<Char-0x7c><Char-0x7c>]<CR>wc/;/e<CR>
 "TO-DO найти как по науке создовать свои text-objects
 
+"------------------------------------------
+" ` TO-DO
+"------------------------------------------
+
+"TO-DO emmet-vim css-свойства в строчку
+
+"TO-DO написать скрипт автооглавления css
+"TO-DO сделать клавиши для создания заголовков
+
+"плагины
 "TO-DO попробовать ide.vim
 "TO-DO Project: открывать в vs
 "TO-DO что такое git-grep
 "TO-DO ack
-
 "TO-DO попробовать https://github.com/mozilla/doctorjs
