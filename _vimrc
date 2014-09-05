@@ -123,17 +123,6 @@ map <S-F12> :Vex z: <cr><C-W>20\|
 " отключаем сочетание K, случайно срабатывающее на caps-lock
 nmap K <Nop>
 
-" создать в соседнем окне css-класс под курсором
-map ,n yi"<S-Tab>o.<C-r>0 {  }<Left><Left>
-
-" поиск выделенного текста в соседнем окне
-vmap ,* *<S-Tab>nzz
-
-" поиск текста из буфера обмена
-nmap ,* /<C-r>*<cr>zz
-
-" ,g - grep-поиск в текущей паке
-nmap ,g :grep -r "" *<Left><Left><Left>
 
 
 "------------------------------------------
@@ -196,7 +185,7 @@ set wildignore=*~
 
 
 "
-" == Исправления проблем с раскадкой клавиатур
+" == Исправление проблем с раскадкой клавиатур
 "------------------------------------------
 
 "для правильного перехода по словам (w) в русском тексте
@@ -263,25 +252,6 @@ autocmd FileType php let b:surround_45 = "<?php \r ?>"
 " оборачивать по '/' в <?php /* */ ?> /
 autocmd FileType php let b:surround_47 = "<?php/* \r */?>"
 
-" копировать в буфер обмена путь к файлу
-if has('win32')
-  nmap ,cs :let @*=substitute(expand("%"), "/", "\\", "g")<CR>
-  nmap ,cl :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
-  nmap ,c8 :let @*=substitute(expand("%:p:8"), "/", "\\", "g")<CR>
-else
-  nmap ,cs :let @*=expand("%")<CR>
-  nmap ,cl :let @*=expand("%:p")<CR>
-endif
-
-" Start interactive EasyAlign in visual mode
-vmap <Enter> <Plug>(EasyAlign)
-
-"включить синтаксис underscore
-nmap ,su :set ft=html<cr>:set syntax=underscore_template<cr>
-
-"пометить конец тега
-nmap ,e vato<C-c>yi"vat<C-c>A <!-- / <C-r>" --><C-c>
-
 " расширения, которые будут добавлятсья при переходе по gf
 :set suffixesadd+=.php,.less,.css
 
@@ -297,6 +267,45 @@ nmap <Leader>a <Plug>(EasyAlign)
 
 " Repeat alignment in visual mode with . key
 vmap . <Plug>(EasyAlignRepeat)
+
+
+
+"
+" == Мои макросы
+"------------------------------------------
+
+" ,n - создать в соседнем окне css-класс под курсором
+map ,n yi"<S-Tab>o.<C-r>0 {  }<Left><Left>
+
+" ,* - поиск выделенного текста в соседнем окне
+vmap ,* *<S-Tab>nzz
+
+" ,* - поиск текста из буфера обмена
+nmap ,* /<C-r>*<cr>zz
+
+" ,g - grep-поиск в текущей паке
+nmap ,g :grep -r "" *<Left><Left><Left>
+
+" ,su - включить синтаксис underscore
+nmap ,su :set ft=html<cr>:set syntax=underscore_template<cr>
+
+" ,e - пометить конец тега
+nmap ,e vato<C-c>yi"vat<C-c>A <!-- / <C-r>" --><C-c>
+
+" копировать в буфер обмена путь к файлу
+if has('win32')
+  " ,cs - копирует в буфер только имя файла
+  nmap ,cs :let @*=substitute(expand("%"), "/", "\\", "g")<CR>
+  " ,cl - копирует в буфер полный путь к файлу
+  nmap ,cl :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
+  " ,c8 - копирует в буфер имя в DOS-формате
+  nmap ,c8 :let @*=substitute(expand("%:p:8"), "/", "\\", "g")<CR>
+else
+  nmap ,cs :let @*=expand("%")<CR>
+  nmap ,cl :let @*=expand("%:p")<CR>
+endif
+
+
 
 
 
@@ -330,9 +339,6 @@ nmap cir ?[{<Char-0x7c><Char-0x7c>]<CR>wc/;/e<CR>
 "------------------------------------------
 
 "TO-DO emmet-vim css-свойства в строчку
-
-"TO-DO написать скрипт автооглавления css
-"TO-DO сделать клавиши для создания заголовков
 
 "плагины
 "TO-DO попробовать ide.vim
