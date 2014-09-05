@@ -282,9 +282,6 @@ nmap ,su :set ft=html<cr>:set syntax=underscore_template<cr>
 "пометить конец тега
 nmap ,e vato<C-c>yi"vat<C-c>A <!-- / <C-r>" --><C-c>
 
-"создать содержание для less-файла
-nmap ,mi v"ay:g/\v(\=\=\|\*\*)/y A<CR>g;"apV}:s/  //g<CR>gv:s/== //g<CR>gv:s/** /  /g<CR>
-
 " расширения, которые будут добавлятсья при переходе по gf
 :set suffixesadd+=.php,.less,.css
 
@@ -304,6 +301,20 @@ vmap . <Plug>(EasyAlignRepeat)
 
 
 "
+" == Содержание и заголовки для css и js
+"------------------------------------------
+
+"создать содержание 
+nmap ,mi v"ay:g/\v(\=\=\|\*\*)/y A<CR>g;"apV}:s/  //g<CR>gv:s/== //g<CR>gv:s/** /  /g<CR>
+
+"создать заголовок 1-го уровня
+nmap ,m1 o//<CR>// ==<CR>// <CR><C-c>kA-<C-c>59.ka 
+
+"создать заголовок 2-го уровня
+nmap ,m2 i<CR>// ** 
+
+
+"
 " == CSS text-objects
 "------------------------------------------
 
@@ -313,8 +324,9 @@ nmap dar ?[{<Char-0x7c><Char-0x7c>]<CR>wd/;\s?/e<CR>
 nmap cir ?[{<Char-0x7c><Char-0x7c>]<CR>wc/;/e<CR>
 "TO-DO найти как по науке создовать свои text-objects
 
-"------------------------------------------
-" ` TO-DO
+
+"
+" == TO-DO
 "------------------------------------------
 
 "TO-DO emmet-vim css-свойства в строчку
