@@ -250,7 +250,9 @@ let g:netrw_list_hide='\~,\.git'
 " оборачивать по '-' в <?php ?> /
 autocmd FileType php let b:surround_45 = "<?php \r ?>"
 " оборачивать по '/' в <?php /* */ ?> /
-autocmd FileType php let b:surround_47 = "<?php/* \r */?>"
+autocmd FileType php let b:surround_47 = "<?php /* \r */ ?>"
+" оборачивать по '?' в <?  ?> /
+autocmd FileType html let b:surround_63 = "<? \r ?>"
 
 " расширения, которые будут добавлятсья при переходе по gf
 :set suffixesadd+=.php,.less,.css
