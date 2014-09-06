@@ -9,49 +9,50 @@ set nocompatible              " be iMproved
 filetype off                  " required!
 
 set rtp+=$VIM\vimfiles\bundle\vundle
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " плагины синтаксиса
-Bundle 'evidens/vim-twig'
-Bundle 'groenewege/vim-less.git'
-Bundle 'hail2u/vim-css3-syntax.git'
-Bundle 'skammer/vim-css-color.git'
-Bundle 'vim-scripts/django.vim'
-Bundle 'aaronj1335/underscore-templates.vim'
+Plugin 'evidens/vim-twig'
+Plugin 'groenewege/vim-less.git'
+Plugin 'hail2u/vim-css3-syntax.git'
+Plugin 'skammer/vim-css-color.git'
+Plugin 'vim-scripts/django.vim'
+Plugin 'aaronj1335/underscore-templates.vim'
 
 " функциональные плагины
-Bundle 'mattn/emmet-vim.git'
-Bundle 'miripiruni/CSScomb-for-Vim.git'
-Bundle 'nelstrom/vim-qargs'
-Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'scrooloose/nerdcommenter.git'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tmhedberg/matchit'
-Bundle 'vim-scripts/CSS-one-line--multi-line-folding'
-Bundle 'junegunn/vim-easy-align'
+Plugin 'mattn/emmet-vim.git'
+Plugin 'miripiruni/CSScomb-for-Vim.git'
+Plugin 'nelstrom/vim-qargs'
+Plugin 'nelstrom/vim-visual-star-search'
+Plugin 'scrooloose/nerdcommenter.git'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tmhedberg/matchit'
+Plugin 'vim-scripts/CSS-one-line--multi-line-folding'
+Plugin 'junegunn/vim-easy-align'
 
 "Snipmate
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 "bootstrap html-markup snippets!
-Bundle 'bonsaiben/bootstrap-snippets'  
-Bundle 'honza/vim-snippets'
+Plugin 'bonsaiben/bootstrap-snippets'  
+Plugin 'honza/vim-snippets'
 
 " навигаци€ по файлам
-Bundle 'project.tar.gz'
-"Bundle 'shemerey/vim-indexer'
+Plugin 'project.tar.gz'
+"Plugin 'shemerey/vim-indexer'
  
 " попробую позже
-"Bundle 'mileszs/ack.vim'
-"Bundle 'tpope/vim-abolish'
-"Bundle 'exUtility'
+"Plugin 'mileszs/ack.vim'
+"Plugin 'tpope/vim-abolish'
+"Plugin 'exUtility'
 
+call vundle#end()
 filetype plugin indent on    " required!
 filetype on                  " required!
 
@@ -155,9 +156,9 @@ set hidden
 
 "не переносить длинные строки
 set nowrap
-"ѕеренос строк по словам, а не по буквам
+" ѕеренос строк по словам, а не по буквам
 set linebreak
-"ѕомечаем перенесенные строки знаком >>>
+" ѕомечаем перенесенные строки знаком >>>
 set showbreak=>>>
 
 "скрыть панель инструментов
@@ -247,11 +248,11 @@ endif
 " файлы, которые не будут показыватьс€ в netrw
 let g:netrw_list_hide='\~,\.git'
 
-" оборачивать по '-' в <?php ?> /
+" оборачивать по '-' в <?php ?>
 autocmd FileType php let b:surround_45 = "<?php \r ?>"
-" оборачивать по '/' в <?php /* */ ?> /
+" оборачивать по '/' в <?php /* */ ?>
 autocmd FileType php let b:surround_47 = "<?php /* \r */ ?>"
-" оборачивать по '?' в <?  ?> /
+" оборачивать по '?' в <?  ?> 
 autocmd FileType html let b:surround_63 = "<? \r ?>"
 
 " расширени€, которые будут добавл€тсь€ при переходе по gf
@@ -306,8 +307,6 @@ else
   nmap ,cs :let @*=expand("%")<CR>
   nmap ,cl :let @*=expand("%:p")<CR>
 endif
-
-
 
 
 
