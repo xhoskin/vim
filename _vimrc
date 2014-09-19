@@ -21,6 +21,7 @@ Plugin 'hail2u/vim-css3-syntax.git'
 Plugin 'skammer/vim-css-color.git'
 Plugin 'vim-scripts/django.vim'
 Plugin 'aaronj1335/underscore-templates.vim'
+Plugin 'digitaltoad/vim-jade'
 
 " функциональные плагины
 Plugin 'mattn/emmet-vim.git'
@@ -289,10 +290,10 @@ nmap ,* /<C-r>*<cr>zz
 " ,g - grep-поиск в текущей паке
 nmap ,g :grep -r "" *<Left><Left><Left>
 
-" ,su - включить синтаксис underscore
+" ,su - включить синтаксис underscore (mnemo - Set Underscore)
 nmap ,su :set ft=html<cr>:set syntax=underscore_template<cr>
 
-" ,e - пометить конец тега
+" ,e - пометить конец тега (mnemo - End)
 nmap ,e vato<C-c>yi"vat<C-c>A <!-- / <C-r>" --><C-c>
 
 " копировать в буфер обмена путь к файлу
@@ -314,13 +315,13 @@ endif
 " == Содержание и заголовки для css и js
 "------------------------------------------
 
-"создать содержание 
+"создать содержание (mnemo - Make Index)
 nmap ,mi v"ay:g/\v(\=\=\|\*\*)/y A<CR>g;"apV}:s/  //g<CR>gv:s/== //g<CR>gv:s/** /  /g<CR>
 
-"создать заголовок 1-го уровня
+"создать заголовок 1-го уровня (mnemo - make 1st level heading)
 nmap ,m1 o//<CR>// ==<CR>// <CR><C-c>kA-<C-c>59.ka 
 
-"создать заголовок 2-го уровня
+"создать заголовок 2-го уровня (mnemo - (mnemo - 2nd level heading)
 nmap ,m2 i<CR>// ** 
 
 
