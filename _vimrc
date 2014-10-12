@@ -15,26 +15,29 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " плагины синтаксиса
+Plugin 'aaronj1335/underscore-templates.vim'
+Plugin 'digitaltoad/vim-jade'
 Plugin 'evidens/vim-twig'
 Plugin 'groenewege/vim-less.git'
 Plugin 'hail2u/vim-css3-syntax.git'
 Plugin 'skammer/vim-css-color.git'
 Plugin 'vim-scripts/django.vim'
-Plugin 'aaronj1335/underscore-templates.vim'
 
 " функциональные плагины
+Plugin 'junegunn/vim-easy-align'
 Plugin 'mattn/emmet-vim.git'
 Plugin 'miripiruni/CSScomb-for-Vim.git'
 Plugin 'nelstrom/vim-qargs'
 Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'scrooloose/nerdcommenter.git'
+Plugin 'tmhedberg/matchit'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'tmhedberg/matchit'
 Plugin 'vim-scripts/CSS-one-line--multi-line-folding'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'mileszs/ack.vim'
+Plugin 'yegappan/mru'
 
 "Snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -150,9 +153,9 @@ set number
 "преобразовать табы в пробелы
 set expandtab
 "размер табулации по умолчанию
-set shiftwidth=2 
-set softtabstop=2 
-set tabstop=2
+set shiftwidth=4 
+set softtabstop=4 
+set tabstop=4
 "при переключении буферов файлы не будут выгружаться из памяти
 set hidden
 
@@ -179,7 +182,12 @@ set noswapfile
 "set cursorline
 
 "сохранять бэкапы в домашнюю папку
-set backupdir=$HOME\.vim\\
+"set backupdir=$HOME\\vim-tmp
+
+"не сохранять бекапы
+set nobackup
+set nowritebackup
+set noswapfile
 
 "Project plugin options
 let g:proj_flags="cgimt"
@@ -212,6 +220,7 @@ ino <C-C> <Esc>
 "открывать файлы кода в нужном формате
 autocmd BufRead,BufNewFile *.cshtml set filetype=html
 autocmd BufRead,BufNewFile *.twig set filetype=html
+autocmd BufRead,BufNewFile *.ejs  set filetype=html
 autocmd BufRead,BufNewFile *.less set filetype=css
 autocmd BufRead,BufNewFile *.sass set filetype=css
 
@@ -295,10 +304,10 @@ nmap ,* /<C-r>*<cr>zz
 " ,g - grep-поиск в текущей паке
 nmap ,g :grep -r "" *<Left><Left><Left>
 
-" ,su - включить синтаксис underscore
+" ,su - включить синтаксис underscore (mnemo - Set Underscore)
 nmap ,su :set ft=html<cr>:set syntax=underscore_template<cr>
 
-" ,e - пометить конец тега
+" ,e - пометить конец тега (mnemo - End)
 nmap ,e vato<C-c>yi"vat<C-c>A <!-- / <C-r>" --><C-c>
 
 " копировать в буфер обмена путь к файлу
@@ -314,19 +323,21 @@ else
   nmap ,cl :let @*=expand("%:p")<CR>
 endif
 
+" сделать многострочный css из однострочного (mnemo Css Multiline)
+"vmap ,cm :s/\v( \{|\} |;)/\1<C-V><CR>/g<CR>
 
 
 "
 " == Содержание и заголовки для css и js
 "------------------------------------------
 
-"создать содержание 
+"создать содержание (mnemo - Make Index)
 nmap ,mi v"ay:g/\v(\=\=\|\*\*)/y A<CR>g;"apV}:s/  //g<CR>gv:s/== //g<CR>gv:s/** /  /g<CR>
 
-"создать заголовок 1-го уровня
+"создать заголовок 1-го уровня (mnemo - make 1st level heading)
 nmap ,m1 o//<CR>// ==<CR>// <CR><C-c>kA-<C-c>59.ka 
 
-"создать заголовок 2-го уровня
+"создать заголовок 2-го уровня (mnemo - (mnemo - 2nd level heading)
 nmap ,m2 i<CR>// ** 
 
 
