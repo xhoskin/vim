@@ -34,6 +34,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tmhedberg/matchit'
 Plugin 'vim-scripts/CSS-one-line--multi-line-folding'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'mileszs/ack.vim'
 
 "Snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -45,6 +46,7 @@ Plugin 'honza/vim-snippets'
 
 " навигация по файлам
 Plugin 'project.tar.gz'
+Plugin 'ide'
 "Plugin 'shemerey/vim-indexer'
  
 " попробую позже
@@ -192,8 +194,12 @@ set wildignore=*~
 "для правильного перехода по словам (w) в русском тексте
 set iskeyword=@,a-z,A-Z,48-57,_,128-175,192-255
 "для правильной работы команд на русской раскладке
-set langmap=й\\;,ц\\,у.,кp,еy,нf,гg,шc,щr,зl,х/,ъ@,фa,ыo,вe,аu,пi,рd,оd,лt,дn,жs,э-,я\\',чq,сj,мk,иx,тb,ьm,бw,юv,Й:,Ц<,У>,КP,ЕY,НF,ГG,ШC,ЩR,ЗL,Х?,Ъ\\',ФA,ЫO,ВE,АU,ПI,РD,ОH,ЛT,ДN,ЖS,Э_,Я\\",ЧQ,СJ,МK,ИX,ТB,ЬM,БW,ЮV,ё$
-"set langmap=\\;q,\\,w,.e,pr,yt,fy,gu,ci,ro,lp,/[,=],aa,os,ed,uf,ig,dh,hj,tk,nl,-\\',\\'z,qx,jc,kv,xb,bn,mm,w\\,,v.,z/,<W,>E,PR,YT,FY,GU,CI,RO,LP,?{,+},AA,OS,ED,UF,IG,DH,HJ,TK,NL,S:,_\\",\\"Z,QX,JC,KV,XB,BN,MM,W<,V>,Z?,йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фs,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э\',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х[,Ъ],ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+highlight lCursor guifg=NONE guibg=Cyan
+"для буквы Ё
+setlocal spell spelllang=ru_yo,en_us
 
 ino <C-C> <Esc>
 
