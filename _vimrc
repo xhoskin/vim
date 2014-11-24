@@ -15,29 +15,26 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " плагины синтаксиса
-Plugin 'aaronj1335/underscore-templates.vim'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'evidens/vim-twig'
-Plugin 'groenewege/vim-less.git'
-Plugin 'hail2u/vim-css3-syntax.git'
-Plugin 'skammer/vim-css-color.git'
-Plugin 'vim-scripts/django.vim'
+"Plugin 'evidens/vim-twig'
+"Plugin 'groenewege/vim-less.git'
+"Plugin 'hail2u/vim-css3-syntax.git'
+"Plugin 'skammer/vim-css-color.git'
+"Plugin 'vim-scripts/django.vim'
+"Plugin 'aaronj1335/underscore-templates.vim'
 
 " функциональные плагины
-Plugin 'junegunn/vim-easy-align'
 Plugin 'mattn/emmet-vim.git'
 Plugin 'miripiruni/CSScomb-for-Vim.git'
 Plugin 'nelstrom/vim-qargs'
 Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'scrooloose/nerdcommenter.git'
-Plugin 'tmhedberg/matchit'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tmhedberg/matchit'
 Plugin 'vim-scripts/CSS-one-line--multi-line-folding'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'mileszs/ack.vim'
-Plugin 'yegappan/mru'
 
 "Snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -153,9 +150,9 @@ set number
 "преобразовать табы в пробелы
 set expandtab
 "размер табулации по умолчанию
-set shiftwidth=4 
-set softtabstop=4 
-set tabstop=4
+set shiftwidth=2 
+set softtabstop=2 
+set tabstop=2
 "при переключении буферов файлы не будут выгружаться из памяти
 set hidden
 
@@ -182,12 +179,7 @@ set noswapfile
 "set cursorline
 
 "сохранять бэкапы в домашнюю папку
-"set backupdir=$HOME\\vim-tmp
-
-"не сохранять бекапы
-set nobackup
-set nowritebackup
-set noswapfile
+set backupdir=$HOME\.vim\\
 
 "Project plugin options
 let g:proj_flags="cgimt"
@@ -202,12 +194,8 @@ set wildignore=*~
 "для правильного перехода по словам (w) в русском тексте
 set iskeyword=@,a-z,A-Z,48-57,_,128-175,192-255
 "для правильной работы команд на русской раскладке
-set keymap=russian-jcukenwin
-set iminsert=0
-set imsearch=0
-highlight lCursor guifg=NONE guibg=Cyan
-"для буквы Ё
-setlocal spell spelllang=ru_yo,en_us
+set langmap=й\\;,ц\\,у.,кp,еy,нf,гg,шc,щr,зl,х/,ъ@,фa,ыo,вe,аu,пi,рd,оd,лt,дn,жs,э-,я\\',чq,сj,мk,иx,тb,ьm,бw,юv,Й:,Ц<,У>,КP,ЕY,НF,ГG,ШC,ЩR,ЗL,Х?,Ъ\\',ФA,ЫO,ВE,АU,ПI,РD,ОH,ЛT,ДN,ЖS,Э_,Я\\",ЧQ,СJ,МK,ИX,ТB,ЬM,БW,ЮV,ё$
+"set langmap=\\;q,\\,w,.e,pr,yt,fy,gu,ci,ro,lp,/[,=],aa,os,ed,uf,ig,dh,hj,tk,nl,-\\',\\'z,qx,jc,kv,xb,bn,mm,w\\,,v.,z/,<W,>E,PR,YT,FY,GU,CI,RO,LP,?{,+},AA,OS,ED,UF,IG,DH,HJ,TK,NL,S:,_\\",\\"Z,QX,JC,KV,XB,BN,MM,W<,V>,Z?,йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фs,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э\',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х[,Ъ],ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>
 
 ino <C-C> <Esc>
 
@@ -220,7 +208,6 @@ ino <C-C> <Esc>
 "открывать файлы кода в нужном формате
 autocmd BufRead,BufNewFile *.cshtml set filetype=html
 autocmd BufRead,BufNewFile *.twig set filetype=html
-autocmd BufRead,BufNewFile *.ejs  set filetype=html
 autocmd BufRead,BufNewFile *.less set filetype=css
 autocmd BufRead,BufNewFile *.sass set filetype=css
 
@@ -236,13 +223,13 @@ augroup json_autocmd
 augroup END 
 
 " Insert-only <CAPS-LOCK> on <C-^>
-set imsearch=-1
+"set imsearch=-1
 "set keymap=insert-only_capslock
-set iminsert=0
+"set iminsert=0
 " black cursor - caps off
-:highlight Cursor guifg=NONE guibg=Red
+":highlight Cursor guifg=NONE guibg=Red
 " cyan cursor - caps off
-:highlight lCursor guifg=NONE guibg=Cyan
+":highlight lCursor guifg=NONE guibg=Cyan
 
 "auto encoding (win7 fix, but breaks gui menu)
 if has("multi_byte")
@@ -301,14 +288,17 @@ vmap ,* *<S-Tab>nzz
 " ,* - поиск текста из буфера обмена
 nmap ,* /<C-r>*<cr>zz
 
-" ,g - grep-поиск в текущей паке
-nmap ,g :grep -r "" *<Left><Left><Left>
+" ,g - grep-поиск в текущей пак 
+nmap ,g :grep -r "" *<Left><Lef ><Left>
 
-" ,su - включить синтаксис underscore (mnemo - Set Underscore)
+" ,su - включить синтаксис underscore
 nmap ,su :set ft=html<cr>:set syntax=underscore_template<cr>
 
-" ,e - пометить конец тега (mnemo - End)
-nmap ,e vato<C-c>yi"vat<C-c>A <!-- / <C-r>" --><C-c>
+" ,te - пометить конец тега (tag end)
+nmap ,te vato<C-c>yi"vat<C-c>A <!-- / <C-r>" --><C-c>
+
+" ,e - открыть netrw в текущей папке
+nmap ,e :Ex<cr>
 
 " копировать в буфер обмена путь к файлу
 if has('win32')
@@ -323,21 +313,19 @@ else
   nmap ,cl :let @*=expand("%:p")<CR>
 endif
 
-" сделать многострочный css из однострочного (mnemo Css Multiline)
-"vmap ,cm :s/\v( \{|\} |;)/\1<C-V><CR>/g<CR>
 
 
 "
 " == Содержание и заголовки для css и js
 "------------------------------------------
 
-"создать содержание (mnemo - Make Index)
+"создать содержание 
 nmap ,mi v"ay:g/\v(\=\=\|\*\*)/y A<CR>g;"apV}:s/  //g<CR>gv:s/== //g<CR>gv:s/** /  /g<CR>
 
-"создать заголовок 1-го уровня (mnemo - make 1st level heading)
+"создать заголовок 1-го уровня
 nmap ,m1 o//<CR>// ==<CR>// <CR><C-c>kA-<C-c>59.ka 
 
-"создать заголовок 2-го уровня (mnemo - (mnemo - 2nd level heading)
+"создать заголовок 2-го уровня
 nmap ,m2 i<CR>// ** 
 
 
