@@ -15,16 +15,16 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " плагины синтаксиса
-"Plugin 'evidens/vim-twig'
-"Plugin 'groenewege/vim-less.git'
-"Plugin 'hail2u/vim-css3-syntax.git'
-"Plugin 'skammer/vim-css-color.git'
-"Plugin 'vim-scripts/django.vim'
-"Plugin 'aaronj1335/underscore-templates.vim'
+Plugin 'evidens/vim-twig'
+Plugin 'groenewege/vim-less.git'
+Plugin 'hail2u/vim-css3-syntax.git'
+Plugin 'skammer/vim-css-color.git'
+Plugin 'vim-scripts/django.vim'
+Plugin 'aaronj1335/underscore-templates.vim'
 
 " функциональные плагины
 Plugin 'mattn/emmet-vim.git'
-Plugin 'miripiruni/CSScomb-for-Vim.git'
+"Plugin 'miripiruni/CSScomb-for-Vim.git'
 Plugin 'nelstrom/vim-qargs'
 Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'scrooloose/nerdcommenter.git'
@@ -46,7 +46,7 @@ Plugin 'honza/vim-snippets'
 
 " навигация по файлам
 Plugin 'project.tar.gz'
-Plugin 'ide'
+"Plugin 'ide'
 "Plugin 'shemerey/vim-indexer'
  
 " попробую позже
@@ -289,7 +289,7 @@ vmap ,* *<S-Tab>nzz
 nmap ,* /<C-r>*<cr>zz
 
 " ,g - grep-поиск в текущей пак 
-nmap ,g :grep -r "" *<Left><Lef ><Left>
+nmap ,g :grep -r "" *<Left><Left><Left>
 
 " ,su - включить синтаксис underscore
 nmap ,su :set ft=html<cr>:set syntax=underscore_template<cr>
