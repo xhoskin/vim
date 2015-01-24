@@ -275,15 +275,6 @@ vmap . <Plug>(EasyAlignRepeat)
 
 " emmet.vim сниппеты 
 let g:user_emmet_settings = {
-\  'css' : {
-\    'snippets' : {
-\      'ct' : "content: \"\";",
-\            'c': 'color:#000;',
-\    },
-\  },
-\}
-
-let g:user_emmet_settings = {
 \    'css': {
 \        'snippets': {
 \            'ct' : "content:\"\";",
@@ -297,11 +288,22 @@ let g:user_emmet_settings = {
 \            'bdl+': 'border-left:1px solid |;',
 \            'bdr+': 'border-right:1px solid |;',
 \            'bdb+': 'border-bottom:1px solid |;',
-\            'bg+': 'background: url("|") no-repeat;',
+\            'bg+': 'background:url("|") no-repeat;',
+\            'bg:i': 'background:url("@{img}|") no-repeat;',
+\
+\            'c:bp' : "color:@brand-primary;",
+\            'c:bs' : "color:@brand-success;",
+\            'c:bw' : "color:@brand-warning;",
+\            'c:bd' : "color:@brand-danger;",
+\            'c:bi' : "color:@brand-info;",
+\            'bg:bp' : "background:@brand-primary;",
+\            'bg:bs' : "background:@brand-success;",
+\            'bg:bw' : "background:@brand-warning;",
+\            'bg:bd' : "background:@brand-danger;",
+\            'bg:bi' : "background:@brand-info;",
 \        }
-\     }
+\     },
 \}
-
 
 
 
