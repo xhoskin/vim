@@ -332,6 +332,9 @@ nmap ,te vato<C-c>yi"vat<C-c>A <!-- / <C-r>" --><C-c>
 " ,e - открыть netrw в текущей папке (Explore)
 nmap ,e :Ex<cr>
 
+" ,sh - открыть консоль в текущей папке
+nmap ,sh :!start bash --login -i<cr>
+
 " копировать в буфер обмена путь к файлу
 if has('win32')
   " ,cs - копирует в буфер только имя файла
