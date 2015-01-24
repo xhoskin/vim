@@ -278,10 +278,29 @@ let g:user_emmet_settings = {
 \  'css' : {
 \    'snippets' : {
 \      'ct' : "content: \"\";",
+\            'c': 'color:#000;',
 \    },
 \  },
 \}
 
+let g:user_emmet_settings = {
+\    'css': {
+\        'snippets': {
+\            'ct' : "content:\"\";",
+\            'c': 'color:|;',
+\            'm:0a': 'margin:0 auto;',
+\            'm0a': 'margin:0 auto;',
+\            'mw': 'min-width:|;',
+\            'mh': 'min-height:|;',
+\            'bd+': 'border:1px solid |;',
+\            'bdt+': 'border-top:1px solid |;',
+\            'bdl+': 'border-left:1px solid |;',
+\            'bdr+': 'border-right:1px solid |;',
+\            'bdb+': 'border-bottom:1px solid |;',
+\            'bg+': 'background: url("|") no-repeat;',
+\        }
+\     }
+\}
 
 
 
