@@ -150,9 +150,9 @@ set number
 "преобразовать табы в пробелы
 set expandtab
 "размер табулации по умолчанию
-set shiftwidth=2 
-set softtabstop=2 
-set tabstop=2
+set shiftwidth=4 
+set softtabstop=4 
+set tabstop=4
 "при переключении буферов файлы не будут выгружаться из памяти
 set hidden
 
@@ -273,6 +273,17 @@ nmap <Leader>a <Plug>(EasyAlign)
 " Repeat alignment in visual mode with . key
 vmap . <Plug>(EasyAlignRepeat)
 
+" emmet.vim сниппеты 
+let g:user_emmet_settings = {
+\  'css' : {
+\    'snippets' : {
+\      'ct' : "content: \"\";",
+\    },
+\  },
+\}
+
+
+
 
 
 "
@@ -288,16 +299,16 @@ vmap ,* *<S-Tab>nzz
 " ,* - поиск текста из буфера обмена
 nmap ,* /<C-r>*<cr>zz
 
-" ,g - grep-поиск в текущей пак 
-nmap ,g :grep -r "" *<Left><Lef ><Left>
+" ,g - grep-поиск в текущей папке (Grep)
+nmap ,g :grep -r "" *<Left><Left><Left>
 
-" ,su - включить синтаксис underscore
+" ,su - включить синтаксис underscore (Syntax Underscore)
 nmap ,su :set ft=html<cr>:set syntax=underscore_template<cr>
 
-" ,te - пометить конец тега (tag end)
+" ,te - пометить конец тега (Tag End)
 nmap ,te vato<C-c>yi"vat<C-c>A <!-- / <C-r>" --><C-c>
 
-" ,e - открыть netrw в текущей папке
+" ,e - открыть netrw в текущей папке (Explore)
 nmap ,e :Ex<cr>
 
 " копировать в буфер обмена путь к файлу
