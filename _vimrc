@@ -150,9 +150,9 @@ set number
 "преобразовать табы в пробелы
 set expandtab
 "размер табулации по умолчанию
-set shiftwidth=2 
-set softtabstop=2 
-set tabstop=2
+set shiftwidth=4 
+set softtabstop=4 
+set tabstop=4
 "при переключении буферов файлы не будут выгружаться из памяти
 set hidden
 
@@ -289,7 +289,10 @@ vmap ,* *<S-Tab>nzz
 nmap ,* /<C-r>*<cr>zz
 
 " ,g - grep-поиск в текущей пак 
-nmap ,g :grep -r "" *<Left><Left><Left>
+nmap ,gg :grep -r "" *<Left><Left><Left>
+
+" ,gl - grep-поиск в текущей пак 
+nmap ,gl :grep -r "" *.less<Left><Left><Left><Left><Left><Left><Left><Left>
 
 " ,su - включить синтаксис underscore
 nmap ,su :set ft=html<cr>:set syntax=underscore_template<cr>
