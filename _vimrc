@@ -273,6 +273,38 @@ nmap <Leader>a <Plug>(EasyAlign)
 " Repeat alignment in visual mode with . key
 vmap . <Plug>(EasyAlignRepeat)
 
+" emmet.vim сниппеты 
+let g:user_emmet_settings = {
+\    'css': {
+\        'snippets': {
+\            'ct' : "content:\"\";",
+\            'c': 'color:|;',
+\            'm:0a': 'margin:0 auto;',
+\            'm0a': 'margin:0 auto;',
+\            'mw': 'min-width:|;',
+\            'mh': 'min-height:|;',
+\            'bd+': 'border:1px solid |;',
+\            'bdt+': 'border-top:1px solid |;',
+\            'bdl+': 'border-left:1px solid |;',
+\            'bdr+': 'border-right:1px solid |;',
+\            'bdb+': 'border-bottom:1px solid |;',
+\            'bg+': 'background:url("|") no-repeat;',
+\            'bg:i': 'background:url("@{img}|") no-repeat;',
+\
+\            'c:bp' : "color:@brand-primary;",
+\            'c:bs' : "color:@brand-success;",
+\            'c:bw' : "color:@brand-warning;",
+\            'c:bd' : "color:@brand-danger;",
+\            'c:bi' : "color:@brand-info;",
+\            'bg:bp' : "background:@brand-primary;",
+\            'bg:bs' : "background:@brand-success;",
+\            'bg:bw' : "background:@brand-warning;",
+\            'bg:bd' : "background:@brand-danger;",
+\            'bg:bi' : "background:@brand-info;",
+\        }
+\     },
+\}
+
 
 
 "
@@ -288,20 +320,23 @@ vmap ,* *<S-Tab>nzz
 " ,* - поиск текста из буфера обмена
 nmap ,* /<C-r>*<cr>zz
 
-" ,g - grep-поиск в текущей пак 
-nmap ,gg :grep -r "" *<Left><Left><Left>
+" ,g - grep-поиск в текущей папке (Grep)
+nmap ,g :grep -r "" *<Left><Left><Left>
 
-" ,gl - grep-поиск в текущей пак 
+" ,gl - grep-поиск текущей папке .less файлов (Grep Less)
 nmap ,gl :grep -r "" *.less<Left><Left><Left><Left><Left><Left><Left><Left>
 
-" ,su - включить синтаксис underscore
+" ,su - включить синтаксис underscore (Syntax Underscore)
 nmap ,su :set ft=html<cr>:set syntax=underscore_template<cr>
 
-" ,te - пометить конец тега (tag end)
+" ,te - пометить конец тега (Tag End)
 nmap ,te vato<C-c>yi"vat<C-c>A <!-- / <C-r>" --><C-c>
 
-" ,e - открыть netrw в текущей папке
+" ,e - открыть netrw в текущей папке (Explore)
 nmap ,e :Ex<cr>
+
+" ,sh - открыть консоль в текущей папке
+nmap ,sh :!start bash --login -i<cr>
 
 " копировать в буфер обмена путь к файлу
 if has('win32')
