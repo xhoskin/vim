@@ -2,51 +2,67 @@ language English_United States	      	" английский язык
 source $VIMRUNTIME/vimrc_example.vim
 "source $VIMRUNTIME/mswin.vim
 
+set nobackup       
+set nowritebackup  
+set noswapfile     
+
+set autowrite
+set autowriteall
+
+" мышка в терминале
+set mouse=a
+
+
 "
 " == Плагины
 "------------------------------------------
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-set rtp+=$VIM\vimfiles\bundle\vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle
-Plugin 'gmarik/Vundle.vim'
-
 " плагины синтаксиса
-Plugin 'evidens/vim-twig'
-Plugin 'groenewege/vim-less.git'
+Plugin 'JulesWang/css.vim'
 Plugin 'hail2u/vim-css3-syntax.git'
-Plugin 'skammer/vim-css-color.git'
+Plugin 'groenewege/vim-less.git'
+"Plugin 'skammer/vim-css-color.git'
+
+Plugin 'digitaltoad/vim-jade'
+Plugin 'evidens/vim-twig'
 Plugin 'vim-scripts/django.vim'
 Plugin 'aaronj1335/underscore-templates.vim'
+Plugin 'othree/html5.vim'
 
 " функциональные плагины
+Plugin 'junegunn/vim-easy-align'
 Plugin 'mattn/emmet-vim.git'
 "Plugin 'miripiruni/CSScomb-for-Vim.git'
 Plugin 'nelstrom/vim-qargs'
 Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'scrooloose/nerdcommenter.git'
+Plugin 'tmhedberg/matchit'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'tmhedberg/matchit'
 Plugin 'vim-scripts/CSS-one-line--multi-line-folding'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'mileszs/ack.vim'
+Plugin 'yegappan/mru'
+Plugin 'majutsushi/tagbar'
+Plugin 'jiangmiao/auto-pairs.git'
+Plugin 'juneedahamed/svnj.vim'
+"Plugin 'rking/ag.vim'
+"Plugin 'benmills/vimux'
+"Plugin 'mklabs/grunt.vim'
 
 "Snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
-"bootstrap html-markup snippets!
 Plugin 'bonsaiben/bootstrap-snippets'  
 Plugin 'honza/vim-snippets'
 
 " навигация по файлам
-Plugin 'project.tar.gz'
-"Plugin 'ide'
+"Plugin 'project.tar.gz'
 "Plugin 'shemerey/vim-indexer'
  
 " попробую позже
@@ -125,17 +141,6 @@ map <S-F12> :Vex z: <cr><C-W>20\|
 
 " отключаем сочетание K, случайно срабатывающее на caps-lock
 nmap K <Nop>
-
-
-
-"------------------------------------------
-
-"pascal
-"nmap <C-F9> <F2>:!echo off && c:\FPC\2.4.4\bin\i386-win32\fpc.exe % \| findstr "^%" \|\| %:r <cr><cr>
-
-"tidy
-"vmap ,x :%!tidy -q -i --show-errors 0<CR>
-
 
 
 "
@@ -288,9 +293,9 @@ let g:user_emmet_settings = {
 \            'bdl+': 'border-left:1px solid |;',
 \            'bdr+': 'border-right:1px solid |;',
 \            'bdb+': 'border-bottom:1px solid |;',
+\            'bg': 'background:|;',
 \            'bg+': 'background:url("|") no-repeat;',
 \            'bg:i': 'background:url("@{img}|") no-repeat;',
-\
 \            'c:bp' : "color:@brand-primary;",
 \            'c:bs' : "color:@brand-success;",
 \            'c:bw' : "color:@brand-warning;",
@@ -301,6 +306,8 @@ let g:user_emmet_settings = {
 \            'bg:bw' : "background:@brand-warning;",
 \            'bg:bd' : "background:@brand-danger;",
 \            'bg:bi' : "background:@brand-info;",
+\            'ff:bs' : "font-family: @font-family-base",
+\            'bs:b' : ".box-shadow(|rgba(0,0,0,.2))",
 \        }
 \     },
 \}
@@ -323,8 +330,8 @@ nmap ,* /<C-r>*<cr>zz
 " ,g - grep-поиск в текущей папке (Grep)
 nmap ,g :grep -r "" *<Left><Left><Left>
 
-" ,gl - grep-поиск текущей папке .less файлов (Grep Less)
-nmap ,gl :grep -r "" *.less<Left><Left><Left><Left><Left><Left><Left><Left>
+" ,gt - grep-поиск в текущей папке .twig файлов (Grep)
+nmap ,gg :grep -r "" * --exclude-dir=".svn"<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
 " ,su - включить синтаксис underscore (Syntax Underscore)
 nmap ,su :set ft=html<cr>:set syntax=underscore_template<cr>
